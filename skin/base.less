@@ -1,0 +1,202 @@
+//demo-base.less
+html{
+  height: 100%;
+}
+body{
+  background-color: #fef5f0;
+  font-family: Helvetica;
+  height: 100%;
+}
+
+
+.wrapper{
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  //头
+  header{
+    background-color: #d6e3e9;
+    height: 44px;
+    line-height: 44px;
+    .logo{
+      width: 15%;
+      float: left;
+      padding-left: 5%;
+      color: #f0931e;
+    }
+    .user-info{
+      padding-right: 5%;
+      float: right;
+    }
+  }
+  //中
+  .content{
+    height: 100%;
+    //左
+    .left-area{
+      width: 15%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      text-align: center;
+      background-color: #e2d9de;
+      ul{
+        li{
+          margin: 10px;
+          padding: 10px;
+          background-color: #c1e1cc;
+          div{
+            cursor: pointer;
+          }
+          &.current{
+            background-color: #f0931e;
+            color: #ffffff;
+          }
+          //.text-input-show{
+          //  border: dashed 1px #222222;
+          //  height: 30px;
+          //  margin: 5px;
+          //  background-color: #ffffff;
+          //  position: relative;
+          //}
+          //.img-show{
+          //  height: 80px;
+          //  margin: 5px;
+          //  position: relative;
+          //  background: url("../image/image-hold.png") no-repeat center;
+          //  background-size: 100% 100%;
+          //}
+        }
+      }
+    }
+
+    //中
+    .center-area{
+      float: left;
+      text-align: center;
+      width: 100%;
+      //中间区域
+      .phone-wrapper{
+        width: 375px;
+        height: 667px;
+        margin: 44px auto;
+        border: 1px solid black;
+        position: relative;
+        //可拖拽样式表 start
+        .text-input-show{
+          resize:both;
+          overflow: auto;
+          border: dashed 1px #222222;
+          height: 30px;
+          width: 100px;
+          background-color: #ffffff;
+          position: absolute;
+          cursor:move;
+        }
+        .img-show{
+          resize:both;
+          overflow: auto;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          cursor:move;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    //右
+    .right-area{
+      width: 15%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      background-color: #e2d9de;
+      display: none;
+      .item{
+        display: none;
+      }
+      .right-input{
+        margin: 10px;
+        padding: 10px;
+        background-color: #c1e1cc;
+        textarea{
+          resize: none;
+          width: 100%;
+          margin: 5px auto;
+        }
+        .change-text-color{
+          li{
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+            border: 1px solid #ffffff;
+            float: left;
+            margin:10px 0 0 10px;
+            &#cred{
+              background-color: red;
+            }
+            &#cblack{
+              background-color: black;
+            }
+            &#cgreen{
+              background-color: green;
+            }
+            &#cyellow{
+              background-color: yellow;
+            }
+            &#cblue{
+              background-color: blue;
+            }
+          }
+        }
+      }
+
+      .right-image{
+        margin: 10px;
+        padding: 10px;
+        background-color: #c1e1cc;
+        #choose_image{
+          width: 100%;
+        }
+        #image-upload-show{
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+          img{
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+//  底部
+  footer{
+    background: #333;
+    color: #f8f8f8;
+    overflow: hidden;
+    line-height: 1.3;
+    z-index: 4;
+    width: 100%;
+    text-align: center;
+    .copyright{
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background: #212121;
+      padding: 20px 0;
+      color: #fff;
+    }
+  }
+
+}

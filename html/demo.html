@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../skin/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../skin/base.css"/>
+    <script type="application/javascript" src="../src/jquery.min.js"></script>
+    <script type="application/javascript" src="../src/drag.js"></script>
+    <script type="application/javascript" src="../src/index.js"></script>
+    <script type="application/javascript" src="../src/test.js"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- 头部-->
+    <header>
+        <div class="logo">
+            SRT-H5-demo
+        </div>
+        <div class="user-info">
+            <span class="user-name">Sonia</span>
+        </div>
+    </header>
+    <!-- 中间 -->
+    <div class="content clear">
+        <!-- 左侧-->
+        <div class="left-area">
+            <ul>
+                <li class="item current">
+                    <div id="change-size">
+                        调整大小
+                    </div>
+                </li>
+                <li class="item">
+                    <div id="change-position">
+                        调整位置
+                    </div>
+                </li>
+
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- 中间区域-->
+        <div class="center-area">
+            <!-- 主操作区-->
+            <div id="main-wrapper" class="phone-wrapper">
+                <div id="text-item" class="text-input-show"></div>
+
+                <div id="img-item" class="img-show">
+                    <div>
+                        <img src="../image/image-hold.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--右侧-->
+        <div class="right-area">
+            <!-- 文本右侧编辑-->
+            <div class="item right-input">
+                <p>请输入文本</p>
+                <textarea type="text" id="text-input" placeholder="请输入文本"></textarea>
+                <p>选择文本颜色</p>
+                <ul class="change-text-color clear">
+                    <li id="cred" data-color="red"></li>
+                    <li id="cblack" data-color="black"></li>
+                    <li id="cgreen" data-color="green"></li>
+                    <li id="cyellow" data-color="yellow"></li>
+                    <li id="cblue" data-color="blue"></li>
+                </ul>
+            </div>
+            <!-- 图片右侧编辑-->
+            <div class="item right-image">
+                <p>上传图片</p>
+                <input type="file" name="file" id="choose_image" multiple="multiple" accept="image/*">
+                <div id="image-upload-show">
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- 底部-->
+    <footer>
+        <div class="copyright">copyright</div>
+    </footer>
+
+
+</div>
+
+</body>
+<script>
+
+
+</script>
+
+</html>
