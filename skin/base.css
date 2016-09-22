@@ -83,6 +83,33 @@ body {
   width: 100%;
   height: 100%;
 }
+.wrapper .content .center-area .phone-wrapper .circle-img-show {
+  resize: both;
+  overflow: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  top: 50px;
+  left: 100px;
+  position: absolute;
+  cursor: move;
+}
+.wrapper .content .center-area .phone-wrapper .circle-img-show img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .content .center-area .phone-wrapper .music-show {
+  resize: both;
+  height: 50px;
+  width: 50px;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: #f0931e;
+  overflow: auto;
+  position: absolute;
+  cursor: move;
+}
 .wrapper .content .right-area {
   width: 15%;
   height: 100%;
@@ -145,6 +172,14 @@ body {
   width: 100%;
   height: 100%;
   display: block;
+}
+.wrapper .content .right-area .right-music {
+  margin: 10px;
+  padding: 10px;
+  background-color: #c1e1cc;
+}
+.wrapper .content .right-area .right-music #choose_music {
+  width: 100%;
 }
 .wrapper footer {
   background: #333;

@@ -36,9 +36,15 @@
         _bind: function () {
             var self = this;
             $('#main-wrapper').delegate('.text-input-show','dblclick',function(){self._editRight('text')});
-            $('#main-wrapper').delegate('.img-show','dblclick',function(){self._editRight('image')});
+            $('#main-wrapper').delegate('.img-show','dblclick',function(){self._editRight('image','normal')});
+            $('#main-wrapper').delegate('.circle-img-show','dblclick',function(){self._editRight('image','circle')});
+            $('#main-wrapper').delegate('.music-show','dblclick',function(){self._editRight('music')});
             $('#choose_image').on('change',function(){
                 self._setImagePreviews();
+            });
+
+            $('#choose_music').on('change',function(e){
+                self._setMucicPreviews(e);
             })
         },
         /**
@@ -60,6 +66,8 @@
                 $this.parents('.item').addClass('current');
                 $('#main-wrapper #text-item').MoveBox();
                 $('#main-wrapper #img-item').MoveBox();
+                $('#main-wrapper #circleimg-item').MoveBox();
+                $('#main-wrapper #audio').MoveBox();
             });
 
         },
@@ -68,7 +76,7 @@
          * @param type
          * @private
          */
-        _editRight: function(type){
+        _editRight: function(type,imgType){
             $('.right-area').show(200);
             $('.right-area').find('.item').hide();
 
@@ -80,6 +88,14 @@
                     break;
                 case 'image':
                     $('.right-image').show(200);
+                    if(imgType == 'circle'){
+                        $('.right-image').data('imgtype','circle');
+                    }else{
+                        $('.right-image').data('imgtype','normal');
+                    }
+                    break;
+                case 'music':
+                    $('.right-music').show(200);
                     break;
                 default:
                     console.log('nothing');
@@ -113,10 +129,16 @@
         _setImagePreviews:function(){
             //var docObj = $('#choose_image');
             //var dd = $('#image-upload-show');
+            var imgtype = $('.right-image').data('imgtype');
             var docObj = document.getElementById("choose_image");
 
             var dd = document.getElementById("image-upload-show");
-            var cc = document.getElementById("img-item");
+            var cc = null;
+            if(imgtype == 'circle'){
+                cc = document.getElementById("circleimg-item");
+            }else{
+                cc = document.getElementById("img-item");
+            }
             dd.innerHTML = "";
             cc.innerHTML = "";
             var fileList = docObj.files;
@@ -160,6 +182,24 @@
                 }
             }
             return true;
+
+        },
+
+
+        _setMucicPreviews:function(e){
+            var audio=document.getElementById("audio");
+            var file=e.target.files[0],src=window.createObjectURL&&window.createObjectURL(file)||window.URL&&window.URL.createObjectURL(file)||window.webkitURL && window.webkitURL.createObjectURL(file);
+            if(/^audio/i.test(file.type)){
+                audio.style.display='block';
+                audio.src=src;
+                audio.play();
+                function g(){isNaN(audio.duration) ? requestAnimationFrame(g):console.info("该歌曲的总时间为："+audio.duration+"秒")}
+                requestAnimationFrame(g);
+            }else{
+                audio.pause();
+                audio.style.display='none';
+                alert("请选择音乐文件！");
+            }
 
         },
 
